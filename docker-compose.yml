@@ -1,0 +1,25 @@
+version: '3.3'
+# networks:
+#   docker_elk:
+#     driver: bridge
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: dockerfile.backend
+    ports:
+      - "5000:5000"
+    container_name: backend
+    hostname: backend
+    # networks:
+    #   - docker_elk
+  frontend:
+    build:
+      context: .
+      dockerfile: dockerfile.web
+    ports:
+      - "8080:80"
+    # networks:
+    #   - docker_elk
+    # links:
+    #   - backend

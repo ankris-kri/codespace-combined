@@ -19,6 +19,9 @@ services:
       dockerfile: dockerfile.web
     ports:
       - "8080:80"
+networks:
+  outside:
+    external: true
     # networks:
     #   - docker_elk
     # links:
